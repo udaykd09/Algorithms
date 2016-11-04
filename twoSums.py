@@ -1,3 +1,5 @@
+from fractions import Fraction
+from math import ceil
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -13,8 +15,7 @@ class Solution(object):
             newnums = nums[:i] + nums[i+1:]
             if (target - n) in newnums:
                 i2 = newnums.index(target-n)+1
-                return [i, i2] if i<i2 else [i2, i]
-
+                return [i, i2] if i < i2 else [i2, i]
 
 mySol = Solution()
-print(mySol.twoSum([0,12,1,0], 0))
+mySol.twoSum()
