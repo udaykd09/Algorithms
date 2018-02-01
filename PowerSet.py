@@ -14,4 +14,4 @@ def getSubsets(set, index=0):
         allSets += moreSubsets
     return allSets
 
-print(getSubsets([1,2,3]))
+print(getSubsets([1, 2, 3]))
