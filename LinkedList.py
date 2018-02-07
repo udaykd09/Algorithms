@@ -54,6 +54,16 @@ class LinkedList:
                 return True
         return False
 
+    def delete_alternate(self, head):
+        if not self:
+            return
+        node = head.next
+        if not node:
+            return
+
+        head.next = node.next
+        node = None
+        self.delete_alternate(head.next)
 
 
 ll = LinkedList()
@@ -69,5 +79,8 @@ ll.reverse()
 ll.printll()
 ll.reverse_recursive()
 ll.printll()
-"""
 print(ll.check_circular())
+"""
+ll.delete_alternate(ll.head)
+print "***"
+ll.printll()
