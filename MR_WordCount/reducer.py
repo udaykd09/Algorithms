@@ -1,14 +1,18 @@
 import sys
 
-count_map = {}
+word = None
+current_word = None
+current_count = 0
 
 for line in sys.stdin:
-    line = line.strip()
-    word, count = line.split('\t', 1)
-    if word in count_map:
-        count_map[word] += int(count)
+    word, count = line.strip().split('\t', 1)
+    if word == current_word:
+        current_count += int(count)
     else:
-        count_map[word] = int(count)
+        if current_word:
+            print "%s\t%s" % (current_word, current_count)
+        current_word = word
+        current_count = int(count)
 
-for word in count_map.keys():
-    print "%s\t%s" % (word, count_map[word])
+if current_word == word:
+    print "%s\t%s" % (current_word, current_count)
