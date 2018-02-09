@@ -1,2 +1,2 @@
-# leetcode
-Solutions to leetcode
+# Algorithms
+Solutions to variety of algorithms, control flows and Data structures
