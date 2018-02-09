@@ -30,6 +30,10 @@ class MinHeap:
     def insert(self, value):
         h = self.Heap
         h.append(value)
+        self.inv_heapify()
+
+    def inv_heapify(self):
+        h = self.Heap
         current = len(h)-1
         while h[current] < h[self.parent(current)]:
             self.swap(current, self.parent(current))
