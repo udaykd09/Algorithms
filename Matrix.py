@@ -48,6 +48,28 @@ def zigzag(matrix):
                 ans[sum].append(matrix[i][j])
     return ans
 
+
+def bottom_top_diagonal(matrix):
+    sol = []
+    m = len(matrix)
+    counter = 0
+    while True:
+        i = m - 1 - counter
+        j = 0
+        arr = []
+        if i < 0:
+            j = -i
+            i = 0
+        while i < m and j < len(matrix[0]):
+            arr.append(matrix[i][j])
+            i += 1
+            j += 1
+        if not arr:
+            break
+        sol.append(arr)
+        counter += 1
+    return sol
+
 def rotate(matrix):
     if matrix is None or len(matrix) < 1:
         return
@@ -73,7 +95,6 @@ def rotate_2(matrix):
     for i in xrange(m):
         matrix[i] = matrix[i][::-1]
 
-
 matrix = [[1,2,3],
           [4,5,6],
           [7,8,9]]
@@ -84,5 +105,5 @@ matrix = [[1,2,3],
 #print matrix
 #print(reverseForm(matrix))
 #print zigzag(matrix)
-rotate_2(matrix)
-print matrix
+#rotate_2(matrix)
+print bottom_top_diagonal(matrix)

@@ -28,7 +28,7 @@ class LinkedList:
             current = next
         self.head = prev
 
-    def reverse_now(self, curr, prev):
+    def reverse_helper(self, curr, prev):
         if not curr.next:
             self.head = curr
             curr.next = prev
@@ -40,7 +40,7 @@ class LinkedList:
     def reverse_recursive(self):
         if not self.head:
             return
-        self.reverse_now(self.head, None)
+        self.reverse_helper(self.head, None)
 
     def check_circular(self):
         root = self.head

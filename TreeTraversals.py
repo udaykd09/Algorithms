@@ -99,7 +99,6 @@ class Node:
         root.right.post_order()
         print root.value
 
-
     def in_order(root):
         if not root:
             return

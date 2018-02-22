@@ -1,22 +1,22 @@
 class Solution(object):
     def getLongestPath2(self, filesys):
-        list = filesys.splitlines();  # Parse the string into list
-        st = [0];  # to add the path separator before root dir
-        lastLevel = -1;  # depth of the last item in st
-        sum = 0;
+        list = filesys.splitlines()  # Parse the string into list
+        st = [0]  # to add the path separator before root dir
+        lastLevel = -1  # depth of the last item in st
+        sum = 0
         for item in list:
             print(item)
-            bareName = item.lstrip(' ');  # Strip leading '\t's
-            curLevel = len(item) - len(bareName);  # Use number of '\t's to find level
+            bareName = item.lstrip(' ')  # Strip leading '\t's
+            curLevel = len(item) - len(bareName) # Use number of '\t's to find level
             while (curLevel <= lastLevel):  # cd .. to the same level as "item"
-                st.pop();
-                lastLevel -= 1;
-            st.append(len(bareName) + st[-1] + 1);  # accumulated length, +1 for path-sep
-            lastLevel = curLevel;
+                st.pop()
+                lastLevel -= 1
+            st.append(len(bareName) + st[-1] + 1)  # accumulated length, +1 for path-sep
+            lastLevel = curLevel
             if ('.' in item):  # Only count "files" with an extension
-                sum += st[-1];
+                sum += st[-1]
             print("#", st, curLevel, sum)
-        return sum;
+        return sum
 
     def getLongestPath(self, S):
         list = S.splitlines()
