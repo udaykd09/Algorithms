@@ -106,6 +106,16 @@ class Node:
         print root.value
         root.right.in_order()
 
+    def clone(root):
+        if not root:
+            return None
+        newRoot = Node(root.value)
+        if root.left:
+            newRoot.left = root.left.clone()
+        if root.right:
+            newRoot.right = root.right.clone()
+        return newRoot
+
 def create_tree(arr):
     for k, n in enumerate(list(arr)):
         if k == 0:
@@ -115,11 +125,13 @@ def create_tree(arr):
     root.printme()
     return root
 
-root = create_tree([3,2])
-print(root.getHeight())
+root = create_tree([0,1,3,2,4,5])
+#print(root.getHeight())
 #root.level_order()
 #root.level_order_q()
 #root.level_order_spiral()
 #post_order(root)
 #root.pre_order()
 #in_order(root)
+new = root.clone()
+new.printme()

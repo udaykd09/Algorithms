@@ -13,4 +13,4 @@ def bsearch(item, arr):
             last = mid - 1
     return found, mid
 
-print(bsearch(0, [1,4,5,6]))
+print(bsearch(5, [1,4,5,6]))

@@ -15,6 +15,9 @@ def bfs_walk(graph, start):
             queue.extend(graph[vertex]-visited)
     return visited
 
+def clone(root):
+    pass
+
 
 def bfs_paths(graph, start, goal):
     queue = [(start, [start])]
