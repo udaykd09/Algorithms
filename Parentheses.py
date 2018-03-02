@@ -17,4 +17,27 @@ def isValid(s):
             stack.extend(n)
     return not stack
 
-print isValid("{{{[][]}}()}")
+d = {
+    ')' : '(',
+    ']' : '[',
+    '}' : '{'
+}
+
+def isValidType2(s):
+    """
+    :type s: str
+    :rtype: bool
+    """
+    l = []
+    for n in s:
+        if n in d.keys():
+            if d[n] not in l:
+                return False
+        elif n in d.values():
+            l.append(n)
+    return True
+
+
+#print isValid("{{{[][]}}()}")
+
+print isValidType2('{[]}')

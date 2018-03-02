@@ -17,5 +17,19 @@ class Solution(object):
                 i2 = newnums.index(target-n)+1
                 return [i, i2] if i < i2 else [i2, i]
 
-mySol = Solution()
-mySol.twoSum()
+
+def twoSumPairs(l1, l2, f):
+    s = set()
+    ans = []
+    for n in l1:
+        s.add(f - n)
+    print s
+    for n in l2:
+        if n in s:
+            ans.append((n, f-n))
+    return ans
+
+
+#mySol = Solution()
+#mySol.twoSum()
+print twoSumPairs([1,2,2,5], [5,6,7,8], 9)

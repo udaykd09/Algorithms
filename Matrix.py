@@ -95,6 +95,10 @@ def rotate_2(matrix):
     for i in xrange(m):
         matrix[i] = matrix[i][::-1]
 
+def rotate_3(matrix):
+    return zip(*reversed(matrix))
+
+
 matrix = [[1,2,3],
           [4,5,6],
           [7,8,9]]
@@ -106,4 +110,5 @@ matrix = [[1,2,3],
 #print(reverseForm(matrix))
 #print zigzag(matrix)
 #rotate_2(matrix)
-print bottom_top_diagonal(matrix)
+#print bottom_top_diagonal(matrix)
+print rotate_3(matrix)

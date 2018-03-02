@@ -1,8 +1,11 @@
+#!/usr/bin/python
+
 import sys, getopt
 
 def main():
     ifile = ''
     ofile = ''
+    print sys.argv
     args = sys.argv[1:]
     try:
         opts, args = getopt.getopt(args, "hi:o:", ["ifile=", "ofile="])
